@@ -32,12 +32,12 @@ Go read it.<br/>
     
   #   generateFeatures() will return our features
   <strong>Takes several paremeters as input:</strong><br/>
-       file -> .wav <br/>
-       premph -> pre emphasis filtering coefficient (first filtering of signal) <br/>
-       ϕl -> window length in secs <br/>
-       ∇ϕ -> hopsize in secs <br/>
-       nfilt -> number of filters for generating mel scale <br/>
-       num_ceps -> number of MFCCs to keep for each frame <br/>
+       file = .wav <br/>
+       premph = pre emphasis filtering coefficient (first filtering of signal) <br/>
+       ϕl = window length in secs <br/>
+       ∇ϕ = hopsize in secs <br/>
+       nfilt = number of filters for generating mel scale <br/>
+       num_ceps = number of MFCCs to keep for each frame <br/>
 
 
 
