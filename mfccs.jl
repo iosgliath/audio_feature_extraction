@@ -227,7 +227,7 @@ function myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl; start=1, finish=
     maxHz = binfreqs[maxi]
   
   
-    # beware, not the most effective plotting function you've ever seen.
+    # beware, not the most elegant process you've ever seen.
 
 
     if colors == "base"
