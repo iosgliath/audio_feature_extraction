@@ -57,6 +57,7 @@ Go read it.<br/>
         -> framing <br/>
         -> window transform <br/>
         -> discrete fourrier transform (Cooley Tuckey radix 2 DIT FFT) <br/>
+        -> convert to Mel space <br/>
         -> log <br/>
         -> discrete cosine transform<br/>
 
