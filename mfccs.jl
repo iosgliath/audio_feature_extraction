@@ -1,9 +1,16 @@
 using Plots, WAV, FFTW
 
 """
-pro tip
-  if you see λ, it hides something about the audio signal time space
-  if you see ϕ, it hides something about the frames the signal is partioned in
+Pro tip
+  if you see λ, it says something about the audio signal time space
+  if you see ϕ, it says something about the frames the signal is partioned in
+  if you see n, it says something about an amount
+  if you see l, it says something about a length
+
+  => ϕn would be intuitively the quantity of frames we manipulate
+
+Hope you get it, now let's get to it.
+
 """
 
 computeϕl(λsr, ϕl) = nextpow(2, λsr * ϕl)
