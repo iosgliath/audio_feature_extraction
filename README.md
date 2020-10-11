@@ -54,7 +54,7 @@ Go read it.<br/>
         -> premph filt <br/>
         -> framing <br/>
         -> window transform <br/>
-        -> discrete fourrier transform <br/>
+        -> discrete fourrier transform (Cooley Tuckey radix 2 DIT FFT) <br/>
         -> log <br/>
         -> discrete cosine transform<br/>
 
