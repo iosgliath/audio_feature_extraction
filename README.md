@@ -46,6 +46,8 @@ Go read it.<br/>
    4 bins of the power spectrum (frames 1, 10, 20 and 30)<br/>
    a heatmap of the filter banks<br/>
    a heatmap of the MFCCs<br/>
+   
+   <blockquote class="imgur-embed-pub" lang="en" data-id="a/p3sTRq8" data-context="false" ><a href="//imgur.com/a/p3sTRq8"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 
 
