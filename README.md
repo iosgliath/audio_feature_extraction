@@ -10,6 +10,7 @@ https://en.wikipedia.org/wiki/Mel-frequency_cepstrum
 
 Planning to later expend on this with better documentation and explain the MFCCs extraction process from start to finish.<br/>
 Beware, nothing new under the sun, this is project is learning oriented.<br/>
+If you have any feedback, keep it coming. <br/>
 
 http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/<br/>
 Helped me hack this out.<br/>
