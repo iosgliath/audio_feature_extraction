@@ -19,26 +19,26 @@ How to use :
     ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)
     ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)
 
-    myplot!() wil return a mosaic of plots
-        filename followed by frequency of maximal power spectral demnsity for the first frame of the batch
-        4 bins of the power spectrum (frames 1, 10, 20 and 30)
-        a heatmap of the filter banks
-        a heatmap of the MFCCs
+ #   myplot!() will return a mosaic of plots
+ #       filename followed by frequency of maximal power spectral demnsity for the first frame of the batch
+ #       4 bins of the power spectrum (frames 1, 10, 20 and 30)
+ #       a heatmap of the filter banks
+ #       a heatmap of the MFCCs
 
 
-    generateFeatures() will return our features
-        takes several paremeters as input:
-            file -> .wav
-            premph -> pre emphasis filtering coefficient (first filtering of signal)
-            ϕl -> window length in secs
-            ∇ϕ -> hopsize in secs
-            nfilt -> number of filters for generating mel scale
-            num_ceps -> number of MFCCs to keep for each frame
+ #   generateFeatures() will return our features
+ #       takes several paremeters as input:
+ #           file -> .wav
+ #           premph -> pre emphasis filtering coefficient (first filtering of signal)
+ #           ϕl -> window length in secs
+ #           ∇ϕ -> hopsize in secs
+ #           nfilt -> number of filters for generating mel scale
+ #           num_ceps -> number of MFCCs to keep for each frame
 
 
 
-    General process :
-        inout signal -> premph filt -> framing -> window transform -> discrete fourrier transform -> log -> discrete cosine transform
+  #  General process :
+  #      input signal -> premph filt -> framing -> window transform -> discrete fourrier transform -> log -> discrete cosine transform
 
-    For now, only Hamming window is implemented.
+  #  For now, only Hamming window is implemented.
 
