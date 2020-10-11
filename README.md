@@ -8,7 +8,7 @@ Mainly, it aims to obtain Mel Frequency Cepstral Coefficents as well as Deltas a
 https://en.wikipedia.org/wiki/Mel-frequency_cepstrum
 
 
-Planning to later expend on this with better documentation and explain the mfcc extraction process from start to finish.<br/>
+Planning to later expend on this with better documentation and explain the MFCCs extraction process from start to finish.<br/>
 Beware, nothing new under the sun, this is project is learning oriented.<br/>
 
 http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/<br/>
