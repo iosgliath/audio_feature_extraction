@@ -16,8 +16,8 @@ function ϕing(λ::Array{T}, ϕl::Integer, ϕ∇::Integer) where {T<:Real}
     """
     takes as input
         signal
-        frame length
-        frame step
+        frame length ϕl
+        frame step ϕ∇
     output framed signal, where window function was applied to each frames
     output of size size (ϕl, ϕn)
     """
