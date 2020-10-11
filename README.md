@@ -28,7 +28,7 @@ Go read it.<br/>
     myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
 
    λsr = sample rate<br/>
-   ϕl = window length ( converted to power of 2 for Cooley Tuckey FFT input constrain)<br/>
+   ϕl = window length (adjusted to power of 2 for Cooley Tuckey FFT input constrain)<br/>
    num_ceps = amount of cepsta to keep<br/>
    fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
