@@ -7,12 +7,14 @@ Mainly, it aims to obtain Mel Frequency Cepstral Coefficents as well as Deltas a
 "In sound processing, the mel-frequency cepstrum (MFC) is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency."<br/>
 https://en.wikipedia.org/wiki/Mel-frequency_cepstrum
 
-http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/<br/>
 
+Planning to later expend on this with better documentation and explain the mfcc extraction process from start to finish.<br/>
+Beware, nothing new under the sun, this is project is learning oriented.<br/>
+
+http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/<br/>
 Helped me hack this out.<br/>
 Great read.<br/>
 Go read it.<br/>
-
 
 <strong>Using</strong><br/>
 
