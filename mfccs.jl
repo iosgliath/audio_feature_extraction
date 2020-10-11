@@ -22,7 +22,7 @@ function ϕing(λ::Array{T}, ϕl::Integer, ϕ∇::Integer) where {T<:Real}
       ϕn += 1
     end
 
-    #pad signal end with 0 -> pad lenght depends on ϕl ans ϕ∇
+  #pad signal end with 0 -> pad length depends on ϕl ans ϕ∇
     padλ(λ) = vcat(λ, zeros(Float64, ϕl))
     λ = padλ(λ)
 
