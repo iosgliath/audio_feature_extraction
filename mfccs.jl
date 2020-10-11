@@ -12,7 +12,8 @@ function ϕing(λ::Array{T}, ϕl::Integer, ϕ∇::Integer) where {T<:Real}
         signal
         frame length
         frame step
-    output frames where window function was applied to each frames
+    output framed signal, where window function was applied to each frames
+    output of size size (ϕl, ϕn)
     """
     λl = length(λ)
     (ϕn, rem) = fldmod(λl,ϕ∇)
