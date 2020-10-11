@@ -7,8 +7,8 @@ Pro tip
   if you see n, it says something about an amount
   if you see l, it says something about a length
 
-  => ϕn would be intuitively the quantity of frames we manipulate
-  => λl would be intuitively the length of time domain signal
+  => ϕn would intuitively be the quantity of frames we manipulate
+  => λl would intuitively be the length of time domain signal
 """
 
 computeϕl(λsr, ϕl) = nextpow(2, λsr * ϕl)
