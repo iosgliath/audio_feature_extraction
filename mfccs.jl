@@ -12,7 +12,7 @@ function ϕing(λ::Array{T}, ϕl::Integer, ϕ∇::Integer) where {T<:Real}
         signal
         frame length
         frame step
-    output frames where window function was applied on each frames
+    output frames where window function was applied to each frames
     """
     λl = length(λ)
     (ϕn, rem) = fldmod(λl,ϕ∇)
@@ -25,7 +25,7 @@ function ϕing(λ::Array{T}, ϕl::Integer, ϕ∇::Integer) where {T<:Real}
     padλ(λ) = vcat(λ, zeros(Float64, ϕl))
     λ = padλ(λ)
 
-    # create array with framed signal of size (nfft, framecount)
+    # create array with framed signal of size (ϕl, ϕn)
     ϕs = hcat( [ λ[i:i+ϕl-1] for i in 1:ϕ∇:λl ]... )
 
     return ϕs
@@ -44,7 +44,7 @@ end
 
 function ctfft(θ)
     """
-    cooley tukey fft implementation
+    cooley tukey 2 DIT FFT implementation
     """
 
     m = length(θ)
@@ -69,7 +69,7 @@ function ctfft(θ)
 end
 
 function computeFilterBanks(nfilt=26, ϕl=512, λsr=16000)
-    #to do dig into lowfreq = zero issue
+    #to do dig into lowfreq = zero issue !
     lowfreq = 100
     # highfreq is sample rate / 2
     highfreq = λsr / 2
@@ -88,14 +88,14 @@ function computeFilterBanks(nfilt=26, ϕl=512, λsr=16000)
     fbank = zeros(nfilt, fld(ϕl, 2)+1)
 
     for m in 2:nfilt+1
-        f_m_minus = trunc(Int, bin[m - 1])   # left
-        f_m = trunc(Int, bin[m])             # center
-        f_m_plus = trunc(Int, bin[m + 1])    # right
+        fl = trunc(Int, bin[m - 1])
+        fc = trunc(Int, bin[m])
+        fr = trunc(Int, bin[m + 1])
 
-        for k in f_m_minus:f_m
+        for k in fl:fc
             fbank[m - 1, k] = (k - bin[m - 1]) / (bin[m] - bin[m - 1])
         end
-        for k in f_m:f_m_plus
+        for k in fc:fr
             fbank[m - 1, k] = (bin[m + 1] - k) / (bin[m + 1] - bin[m])
         end
     end
@@ -114,7 +114,8 @@ function fftλ(λ::Vector, λsr::Float64, ϕl::Float64, ϕ∇::Float64)
 
     # convert winwow length to sample count, enforcing pow2 for cooley tukey fft
     ϕl = computeϕl(λsr, ϕl)
-
+  
+    # framing signal : from vector input to array of size (framelength=ϕl, framecount=ϕn)
     ϕs = ϕing( λ, ϕl, trunc( Int, ϕ∇*λsr ) )
     wϕs = window(ϕs)
 
@@ -126,6 +127,7 @@ function fftλ(λ::Vector, λsr::Float64, ϕl::Float64, ϕ∇::Float64)
 
     magnitude = mapslices(x->abs.(x), dft, dims=1)
     powspec = mapslices(x->abs2.(x)/ϕl, dft, dims=1)
+  
     return powspec
 end
 
@@ -175,39 +177,22 @@ function compute∇mffc(mfcc, N)
     return ∇mfcc
 end
 
-function eatFolder(path)
-    cd()
-    cd(path)
-    files = readdir()
-    print(files)
-    mkdir("output_dct")
-    #cd("output")
-    for file in files
-        print("\nProcessing ", file)
-        cd()
-        cd(path)
-        λsr, ϕl, powspec, bin, fbankDB, fmfcc, ∇fmfcc, ∇∇fmfcc = generateFeatures(file, ϕl = 0.025, ∇ϕ = 0.01, nfilt=100, num_ceps = 15)
-        myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
-        outfilename = replace(file, ".wav" => ".png")
-        cd("output_dct")
-        savefig(outfilename)
-    end
-end
-
 function generateFeatures(file; preemph=0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt= 20, num_ceps = 12, N = 2)
 
     data, fs, nbits = wavread(file, format="native")
 
+    # from stereo to mono
     data = reshape(data[:,1], length(data[:,1]), 1)
 
+    # data janitoring, to Float64
     λsr = convert(Float64, fs)
-
     λ = convert(Array{Float64,2},data)
     λ = vec(convert(Array, λ))
 
     #pre emphasis filtering
     λ = λ .* preemph
 
+    # compute fft and get power spectral density
     powspec = fftλ(λ, λsr, ϕl, ∇ϕ)
 
     ϕenergy = sum(powspec, dims=1)
@@ -224,12 +209,17 @@ function generateFeatures(file; preemph=0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt= 
 end
 
 function myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl; start=1, finish=0, colors="base")
+  
+  
     bin2freq(bin, λsr, ϕl) = [(i-1)*λsr/ϕl for i in 1:fld(ϕl,2)+1]
     ϕl = computeϕl(λsr, ϕl)
     binfreqs = bin2freq(bin, λsr, ϕl)
 
     maxi = findfirst(x->x==maximum(powspec[:,1]), powspec[:,1])
     maxHz = binfreqs[maxi]
+  
+  
+    # beware, not the most effective plotting function you've ever seen.
 
 
     if colors == "base"
@@ -283,6 +273,8 @@ function myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl; start=1, finish=
 end
 
 
+# Right, noz just cd into folder
+
 cd()
 cd("samples/")
 a2 = "A2v16.wav"
@@ -293,9 +285,12 @@ file = a2
 file = c4
 file = fs
 
+# set file as file you wanna extract
 
 λsr, ϕl, powspec, bin, fbankDB, fmfcc, ∇fmfcc, ∇∇fmfcc = generateFeatures(file, preemph = 0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt=20, num_ceps = 12)
 myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
 
 heatmap(∇fmfcc[:,1:100])
 heatmap(∇∇fmfcc[:,1:10])
+
+# enjoy
