@@ -1,5 +1,11 @@
 using Plots, WAV, FFTW
 
+"""
+pro tip
+  if you see λ, it hides something about the audio signal time space
+  if you see ϕ, it hides something about the frames the signal is partioned in
+"""
+
 computeϕl(λsr, ϕl) = nextpow(2, λsr * ϕl)
 
 function hamming(n::T, N::T) where {T <: Integer}
