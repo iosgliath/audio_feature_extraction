@@ -34,7 +34,7 @@ Go read it.<br/>
    ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    N = upper range limit for Delta MFCC computation. Usually = 2 <br/>
     
-  #   generateFeatures() will return our features
+  #   generateFeatures() will return signal features
   <strong>Takes several paremeters as input:</strong><br/>
        file = .wav <br/>
        premph = pre emphasis filtering coefficient (first filtering of signal) <br/>
