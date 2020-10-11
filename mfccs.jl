@@ -84,13 +84,6 @@ function computeFilterBanks(nfilt=26, ϕl=512, λsr=16000)
     # translate band ranges drom mel space back to hertz space
     hz_points = mel2hz.(mel_points)
 
-    # We don't have the frequency resolution required to put
-    # filters at the exact points calculated above, so we need
-    # to round those frequencies to the nearest FFT bin.
-    # This process does not affect the accuracy of the features.
-    # To convert the frequncies to fft bin numbers we need to
-    # know the FFT size and the sample rate
-
     bin = floor.((ϕl + 1) * hz_points / λsr)
     fbank = zeros(nfilt, fld(ϕl, 2)+1)
 
