@@ -132,6 +132,9 @@ function fftλ(λ::Vector, λsr::Float64, ϕl::Float64, ϕ∇::Float64)
 end
 
 function mydct(v::Vector)
+  
+  # not getting same results as with FFTW package, so not using it for now
+  
     n = length(v)
     y = zeros(Float64, n)
     for i = 1:n
@@ -146,10 +149,12 @@ function mydct(v::Vector)
         end
         y[i] = sum * sqrt(2 / n);
     end
+  
     return y
 end
 
 function compute∇mffc(mfcc, N)
+  
     # input of mfcc of size ( nfilt, nframes)
     nfilt = size(mfcc, 1)
     ϕn = size(mfcc, 2)
@@ -168,12 +173,12 @@ function compute∇mffc(mfcc, N)
 
     # for each frame, at each filter, calculate ∇mfcc = ∑{n=1:N}[ n * (c[t+n] - c[t-n]) ] / ∑{n=1:N}[ 2 * n^2 ]
     for i = 1:nfilt, j in 1:ϕn
-
         for n = 1:N
             # mfcc are padded, while using output coordinates => add pad length to mfcc coor
             ∇mfcc[i,j] += n * ( mfcc[i,j+N+n] - mfcc[i,j+N-n] ) / ( 2 * sqrt(n) )
         end
     end
+  
     return ∇mfcc
 end
 
