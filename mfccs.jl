@@ -9,8 +9,6 @@ Pro tip
 
   => ϕn would be intuitively the quantity of frames we manipulate
   => λl would be intuitively the length of time domain signal
-
-Hope you get it, now let's get to it.
 """
 
 computeϕl(λsr, ϕl) = nextpow(2, λsr * ϕl)
