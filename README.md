@@ -32,6 +32,7 @@ Go read it.<br/>
    fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
+   N = upper range limit for Delta MFCC computation. Usually = 2 <br/>
     
   #   generateFeatures() will return our features
   <strong>Takes several paremeters as input:</strong><br/>
