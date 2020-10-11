@@ -58,7 +58,7 @@ end
 
 function ctfft(θ)
     """
-    cooley tukey 2 DIT FFT implementation
+    Cooley Tukey 2 DIT FFT implementation
     """
 
     m = length(θ)
