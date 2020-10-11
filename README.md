@@ -14,11 +14,11 @@ Great read.<br/>
 Go read it.<br/>
 
 
-Using<br/>
+<strong>Using</strong><br/>
     WAV.jl for reading .wav file <br/>
     FFTW.jl for Discrete Cosine transform ( mydct() is working in progress)<br/>
 
-How to use :
+<strong>How to use :</strong><br/>
 
     λsr, ϕl, powspec, bin, fbankDB, fmfcc, ∇fmfcc, ∇∇fmfcc = generateFeatures(file, preemph = 0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt=20, num_ceps = 12)
     myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
@@ -26,9 +26,9 @@ How to use :
     λsr = sample rate
     ϕl = window length ( converted to power of 2 for Cooley Tuckey FFT implementation)
 
-   fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)
-   ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)
-   ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)
+   fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
+   ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
+   ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
     
   #   generateFeatures() will return our features
    takes several paremeters as input:
