@@ -36,6 +36,8 @@ function window(ϕs)
     """
     takes frames as input
     output frames where window function on each frames
+  
+    for now, only hamming -> 0.5*(1-cos(2π*n/(N-1)))
     """
     ϕl = size(ϕs, 1)
     w = hamming.(collect(1:ϕl), ϕl+1)
