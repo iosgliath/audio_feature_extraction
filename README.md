@@ -23,8 +23,8 @@ Go read it.<br/>
     λsr, ϕl, powspec, bin, fbankDB, fmfcc, ∇fmfcc, ∇∇fmfcc = generateFeatures(file, preemph = 0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt=20, num_ceps = 12)
     myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
 
-    λsr = sample rate
-    ϕl = window length ( converted to power of 2 for Cooley Tuckey FFT implementation)
+   λsr = sample rate<br/>
+   ϕl = window length ( converted to power of 2 for Cooley Tuckey FFT implementation)<br/>
 
    fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
@@ -42,21 +42,21 @@ Go read it.<br/>
 
 
  #   myplot!() will return a mosaic of plots
-   filename followed by frequency of maximal power spectral demnsity for the first frame of the batch
-   4 bins of the power spectrum (frames 1, 10, 20 and 30)
-   a heatmap of the filter banks
-   a heatmap of the MFCCs
+   filename followed by frequency of maximal power spectral demnsity for the first frame of the batch<br/>
+   4 bins of the power spectrum (frames 1, 10, 20 and 30)<br/>
+   a heatmap of the filter banks<br/>
+   a heatmap of the MFCCs<br/>
 
 
 
   #  General process :
-   input signal 
-        -> premph filt 
-        -> framing 
-        -> window transform 
-        -> discrete fourrier transform 
-        -> log 
-        -> discrete cosine transform
+   input signal <br/>
+        -> premph filt <br/>
+        -> framing <br/>
+        -> window transform <br/>
+        -> discrete fourrier transform <br/>
+        -> log <br/>
+        -> discrete cosine transform<br/>
 
    For now, only Hamming window is implemented.
 
