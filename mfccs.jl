@@ -279,7 +279,7 @@ function myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl; start=1, finish=
 end
 
 
-# Right, noz just cd into folder
+# Right, now just cd into folder with your wav file
 
 cd()
 cd("samples/")
