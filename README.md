@@ -31,7 +31,7 @@ Go read it.<br/>
    ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
     
   #   generateFeatures() will return our features
-   takes several paremeters as input:
+  <strong>Takes several paremeters as input:</strong><br/>
        file -> .wav <br/>
        premph -> pre emphasis filtering coefficient (first filtering of signal) <br/>
        ϕl -> window length in secs <br/>
