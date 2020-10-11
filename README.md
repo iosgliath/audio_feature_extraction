@@ -4,8 +4,7 @@
 This file impletements audio feature extraction techniques while using the less external packages possible.
 
 Using
-    WAV.jl for reading .wav file
-    FFTW.jl for Discrete Cosine transform ( mydct() is working in progress)
+    WAV.jl for reading .wav file and FFTW.jl for Discrete Cosine transform ( mydct() is working in progress)
 
 How to use :
 
