@@ -8,6 +8,7 @@ Pro tip
   if you see l, it says something about a length
 
   => ϕn would be intuitively the quantity of frames we manipulate
+  => λl would be intuitively the length of time domain signal
 
 Hope you get it, now let's get to it.
 """
