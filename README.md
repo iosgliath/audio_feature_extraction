@@ -15,6 +15,7 @@ Go read it.<br/>
 
 
 <strong>Using</strong><br/>
+
     WAV.jl for reading .wav file <br/>
     FFTW.jl for Discrete Cosine transform ( mydct() is working in progress)<br/>
 
@@ -25,7 +26,6 @@ Go read it.<br/>
 
    λsr = sample rate<br/>
    ϕl = window length ( converted to power of 2 for Cooley Tuckey FFT implementation)<br/>
-
    fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
