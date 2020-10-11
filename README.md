@@ -2,6 +2,10 @@
 
 
 This file impletements audio feature extraction techniques while using the less external packages possible.
+Mainly, it aims to obtain Mel Frequency Cepstral Coefficents as well as Deltas and Delta-Deltas of those coefficients.
+
+"In sound processing, the mel-frequency cepstrum (MFC) is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency."
+https://en.wikipedia.org/wiki/Mel-frequency_cepstrum
 
 Using
     WAV.jl for reading .wav file and FFTW.jl for Discrete Cosine transform ( mydct() is working in progress)
