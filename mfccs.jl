@@ -15,7 +15,7 @@ end
 function ϕing(λ::Array{T}, ϕl::Integer, ϕ∇::Integer) where {T<:Real}
     """
     takes as input
-        signal
+        signal λ
         frame length ϕl
         frame step ϕ∇
     output framed signal, where window function was applied to each frames
