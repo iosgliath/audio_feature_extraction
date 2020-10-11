@@ -38,7 +38,13 @@ How to use :
 
 
   #  General process :
-        input signal -> premph filt -> framing -> window transform -> discrete fourrier transform -> log -> discrete cosine transform
+        input signal 
+        -> premph filt 
+        -> framing 
+        -> window transform 
+        -> discrete fourrier transform 
+        -> log 
+        -> discrete cosine transform
 
     For now, only Hamming window is implemented.
 
