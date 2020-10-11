@@ -38,9 +38,7 @@ function ϕing(λ::Array{T}, ϕl::Integer, ϕ∇::Integer) where {T<:Real}
     λ = padλ(λ)
 
     # create array with framed signal of size (ϕl, ϕn)
-    ϕs = hcat( [ λ[i:i+ϕl-1] for i in 1:ϕ∇:λl ]... )
-
-    return ϕs
+    return hcat( [ λ[i:i+ϕl-1] for i in 1:ϕ∇:λl ]... )
 end
 
 function window(ϕs)
@@ -52,8 +50,7 @@ function window(ϕs)
     """
     ϕl = size(ϕs, 1)
     w = hamming.(collect(1:ϕl), ϕl+1)
-    wϕs = mapslices(x -> x.*w, ϕs, dims = 1)
-    return wϕs
+    return mapslices(x -> x.*w, ϕs, dims = 1)
 end
 
 function ctfft(θ)
