@@ -10,7 +10,6 @@ Pro tip
   => ϕn would be intuitively the quantity of frames we manipulate
 
 Hope you get it, now let's get to it.
-
 """
 
 computeϕl(λsr, ϕl) = nextpow(2, λsr * ϕl)
