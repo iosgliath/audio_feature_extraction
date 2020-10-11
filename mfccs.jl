@@ -115,7 +115,7 @@ end
 
 function fftλ(λ::Vector, λsr::Float64, ϕl::Float64, ϕ∇::Float64)
 
-    # convert winwow length to sample count, enforcing pow2 for cooley tukey fft
+    # convert winwow length from time space to fft bins while nforcing pow2 for cooley tukey fft input constrain
     ϕl = computeϕl(λsr, ϕl)
   
     # framing signal : from vector input to array of size (framelength=ϕl, framecount=ϕn)
