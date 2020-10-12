@@ -97,19 +97,20 @@ function computeFilterBanks(nfilt=26, ϕl=512, λsr=16000)
 
     bin = floor.((ϕl + 1) * hz_points / λsr)
     fbank = zeros(nfilt, fld(ϕl, 2)+1)
-
+  
     for m in 2:nfilt+1
-        fl = trunc(Int, bin[m - 1])
-        fc = trunc(Int, bin[m])
-        fr = trunc(Int, bin[m + 1])
+        l = trunc(Int, bin[m - 1])
+        c = trunc(Int, bin[m])
+        r = trunc(Int, bin[m + 1])
 
-        for k in fl:fc
+        for k in l:c
             fbank[m - 1, k] = (k - bin[m - 1]) / (bin[m] - bin[m - 1])
         end
-        for k in fc:fr
+        for k in c:r
             fbank[m - 1, k] = (bin[m + 1] - k) / (bin[m + 1] - bin[m])
         end
     end
+  
     return fbank, bin
 end
 
