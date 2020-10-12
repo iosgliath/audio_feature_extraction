@@ -31,19 +31,19 @@ Go read it.<br/>
     
   #   generateFeatures() will return signal features
   
-   file = .wav <br/>
-   λsr = sample rate<br/>
-   premph = pre emphasis filtering coefficient (first filtering of signal) <br/>
-   ϕl = window length (adjusted to power of 2 for Cooley Tuckey FFT input constrain)<br/>
-   ∇ϕ = hopsize in secs <br/>
-   nfilt = number of filters for generating mel scale <br/>
-   num_ceps = amount of cepsta to keep<br/>
-   filterbanks = Mel space banks of size (nfilt, nframes)<br/>
-   fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
-   ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
-   ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
-   N = upper range limit for Delta MFCC computation. Usually = 2 <br/>
-   start/finish = starting/ending range for frame plotting. If finish = 0, plot all frames<br/>
+   <strong>file</strong> = .wav <br/>
+   <strong>λsr</strong> = sample rate<br/>
+   <strong>premph</strong> = pre emphasis filtering coefficient (first filtering of signal) <br/>
+   <strong>ϕl</strong> = window length (adjusted to power of 2 for Cooley Tuckey FFT input constrain)<br/>
+   <strong>∇ϕ</strong> = hopsize in secs <br/>
+   <strong>nfilt</strong> = number of filters for generating mel scale <br/>
+   <strong>num_ceps</strong> = amount of cepsta to keep<br/>
+   <strong>filterbanks</strong> = Mel space banks of size (nfilt, nframes)<br/>
+   <strong>fmfcc</strong> = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
+   <strong>∇fmfcc</strong> = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
+   <strong>∇∇fmfcc</strong> = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
+   <strong>N</strong> = upper range limit for Delta MFCC computation. Usually = 2 <br/>
+   <strong>start / finish</strong> = starting/ending range for frame plotting. If finish = 0, plot all frames<br/>
    
  #   myplot!() will return a mosaic of plots
    filename followed by frequency of maximal power spectral density for the first frame of the batch<br/>
