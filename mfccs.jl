@@ -309,6 +309,6 @@ file = fs
 myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
 
 heatmap(∇fmfcc[:,1:100])
-heatmap(∇∇fmfcc[:,1:10])
+heatmap(∇∇fmfcc[:,1:100])
 
 # enjoy
