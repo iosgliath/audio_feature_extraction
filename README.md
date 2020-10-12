@@ -1,7 +1,7 @@
 # audio_feature_extraction
 
 
-This file (mfcc.jl) impletements audio feature extraction techniques while using the less external packages possible.<br/>
+This file (mfccs.jl) impletements audio feature extraction techniques while using the less external packages possible.<br/>
 Mainly, it aims to obtain Mel Frequency Cepstral Coefficents as well as Deltas and Delta-Deltas of those coefficients.<br/>
 
 Those coefficients will later be used as input vectors for a note classification model.<br/>
