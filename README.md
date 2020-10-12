@@ -48,7 +48,7 @@ Go read it.<br/>
 
 
  #   myplot!() will return a mosaic of plots
-   filename followed by frequency of maximal power spectral demnsity for the first frame of the batch<br/>
+   filename followed by frequency of maximal power spectral density for the first frame of the batch<br/>
    4 bins of the power spectrum (frames 1, 10, 20 and 30)<br/>
    a heatmap of the filter banks<br/>
    a heatmap of the MFCCs<br/>
