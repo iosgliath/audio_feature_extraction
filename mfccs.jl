@@ -184,7 +184,7 @@ function compute∇mffc(mfcc, N)
     # pϕn is padded mfcc frame count
     pϕn = size(mfcc, 2)
 
-    # for each frame, at each cepsta, calculate ∇mfcc = ∑{n=1:N}[ n * (c[t+n] - c[t-n]) ] / ∑{n=1:N}[ 2 * n^2 ]
+    # for each frame, at each cepstra, calculate ∇mfcc = ∑{n=1:N}[ n * (c[t+n] - c[t-n]) ] / ∑{n=1:N}[ 2 * n^2 ]
     for i = 1:num_ceps, j in 1:ϕn
         for n = 1:N
             # mfcc are padded, while using output coordinates => add pad length to mfcc coor
