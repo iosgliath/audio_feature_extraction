@@ -69,7 +69,7 @@ And we also get our Deltas and Delta-Deltas MFCCs ( which indicates in which 'di
 
 ![image info](./output2.png)<br/>
 
-Combining MFCCs, DeltaMFCCs and DeltaDeltaMFCCs into a single input vector for each frame, will result in a fingerprint of the audio signal that will serve as input for our classification model.<br/>
+Combining MFCCs, DeltaMFCCs and DeltaDeltaMFCCs into a single input vector for each frame, will result in a fingerprint of the audio signal that will serve as input for the classification model.<br/>
 
 
   #  General process :
