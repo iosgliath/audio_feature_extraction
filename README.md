@@ -33,7 +33,7 @@ Go read it.<br/>
 
     
   #   generateFeatures() will return signal features
-  
+ 
    <strong>file</strong> = .wav <br/>
    <strong>λsr</strong> = sample rate<br/>
    <strong>premph</strong> = pre emphasis filtering coefficient (first filtering of signal) <br/>
@@ -54,9 +54,13 @@ Go read it.<br/>
    a heatmap of the filter banks<br/>
    a heatmap of the MFCCs<br/>
    
-   ![image info](./output.png)
-
-Yeah! We have an approx of the fundamental frequency of this piano key while only looking at the max powspec of the first frame of the signal!
+   <strong>Input signal = time domain</strong><br/>
+    ![image info](./input.png)
+    <strong>Output = frequency domain analysis</strong><br/>
+    ![image info](./output.png)
+    
+We can see harmonic resonances in the filter banks.<br/>
+Yeah! From the base audio signal, we have isolated the fundamental frequency of this piano key, while only looking at the max powspec of the first frame of the signal!
 
   #  General process :
    input signal <br/>
