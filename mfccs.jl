@@ -2,13 +2,14 @@ using Plots, WAV, FFTW
 
 """
 Pro tip
-  if you see λ, it says something about the audio signal time space
-  if you see ϕ, it says something about the frames the signal is partioned in
-  if you see n, it says something about an amount
-  if you see l, it says something about a length
+  if you see λ in it, it says something about the audio signal time space
+  if you see ϕ in it, it says something about the frames the signal is partioned in
+  if you see n in it, it says something about an amount
+  if you see l in it, it says something about a length
 
-  => ϕn would intuitively be the quantity of frames we manipulate
-  => λl would intuitively be the length of time domain signal
+  thus :
+    - ϕn would intuitively be the quantity of frames we manipulate,
+    - λl would intuitively be the length of time domain signal
 """
 
 computeϕl(λsr, ϕl) = nextpow(2, λsr * ϕl)
