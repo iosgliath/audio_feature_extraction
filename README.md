@@ -63,7 +63,7 @@ Go read it.<br/>
    ![image info](./output.png)<br/>
     
 We can see harmonic resonances in the filter banks (lower left heatmap) that indicates the timbre of the note.<br/>
-Nonetheless, we have isolated the fundamental frequency of this piano key, only looking at the max powspec of the first frame of the signal enables us to get a good estimation of the fundamental frequency of the signal !<br/>
+Nonetheless, we have isolated the fundamental frequency of this piano key, only looking at the max powspec of the first frame of the signal enables us to get a good estimation of the fundamental frequency of the signal ( quick sanity check ) !<br/>
 
 We also get our Deltas and Delta-Deltas MFCCs ( which indicates in which 'direction' (diferential) and at which 'speed' (acceleration) do our cepstal coefficients change over time, giving us a good indication of the dynamics behind the power spectrum we are analysing ).<br/>
 
