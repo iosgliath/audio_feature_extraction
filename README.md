@@ -38,6 +38,7 @@ Go read it.<br/>
    ∇ϕ = hopsize in secs <br/>
    nfilt = number of filters for generating mel scale <br/>
    num_ceps = amount of cepsta to keep<br/>
+   filterbanks = Mel space banks of size (nfilt, nframes)<br/>
    fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
