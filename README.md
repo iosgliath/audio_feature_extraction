@@ -37,7 +37,7 @@ Go read it.<br/>
    <strong>ϕl</strong> = window length in secs (later auto adjusted to power of 2 samples for Cooley Tuckey FFT input constrain)<br/>
    <strong>∇ϕ</strong> = hopsize in secs <br/>
    <strong>nfilt</strong> = number of filters for generating mel scale <br/>
-   <strong>num_ceps</strong> = amount of cepsta to keep<br/>
+   <strong>num_ceps</strong> = amount of cepstra to keep<br/>
    <strong>filterbanks</strong> = Mel space banks of size (nfilt, nframes)<br/>
    <strong>fmfcc</strong> = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    <strong>∇fmfcc</strong> = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
