@@ -56,6 +56,7 @@ Go read it.<br/>
    
    ![image info](./output.png)
 
+Yeah! We have an approx of the fundamental frequency of this piano key while only looking at the max powspec of the first frame of the signal!
 
   #  General process :
    input signal <br/>
