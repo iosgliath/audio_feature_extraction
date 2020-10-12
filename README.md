@@ -55,9 +55,12 @@ Go read it.<br/>
    a heatmap of the MFCCs<br/>
    
    <strong>Input signal = time domain</strong><br/>
-    ![image info](./input.png)
-    <strong>Output = frequency domain analysis</strong><br/>
-    ![image info](./output.png)
+   
+   ![image info](./input.png)<br/>
+    
+   <strong>Output = frequency domain analysis</strong><br/>
+    
+   ![image info](./output.png)<br/>
     
 We can see harmonic resonances in the filter banks.<br/>
 Yeah! From the base audio signal, we have isolated the fundamental frequency of this piano key, while only looking at the max powspec of the first frame of the signal!
