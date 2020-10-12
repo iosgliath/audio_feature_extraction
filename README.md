@@ -34,7 +34,7 @@ Go read it.<br/>
    <strong>file</strong> = .wav <br/>
    <strong>λsr</strong> = sample rate<br/>
    <strong>premph</strong> = pre emphasis filtering coefficient (first filtering of signal) <br/>
-   <strong>ϕl</strong> = window length (adjusted to power of 2 for Cooley Tuckey FFT input constrain)<br/>
+   <strong>ϕl</strong> = window length in secs (later auto adjusted to power of 2 for Cooley Tuckey FFT input constrain)<br/>
    <strong>∇ϕ</strong> = hopsize in secs <br/>
    <strong>nfilt</strong> = number of filters for generating mel scale <br/>
    <strong>num_ceps</strong> = amount of cepsta to keep<br/>
