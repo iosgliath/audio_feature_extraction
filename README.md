@@ -21,6 +21,7 @@ Go read it.<br/>
 
    WAV.jl for reading .wav file <br/>
    FFTW.jl for Discrete Cosine transform ( mydct() is a work in progress)<br/>
+   Plots.jl for ... plotting <br/>
 
 <strong>How to use :</strong><br/>
 
