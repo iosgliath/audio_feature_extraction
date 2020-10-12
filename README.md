@@ -28,26 +28,22 @@ Go read it.<br/>
     λsr, ϕl, powspec, bin, fbankDB, fmfcc, ∇fmfcc, ∇∇fmfcc = generateFeatures(file, preemph = 0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt=20, num_ceps = 12)
     myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
 
+    
+  #   generateFeatures() will return signal features
+  
+   file = .wav <br/>
    λsr = sample rate<br/>
+   premph = pre emphasis filtering coefficient (first filtering of signal) <br/>
    ϕl = window length (adjusted to power of 2 for Cooley Tuckey FFT input constrain)<br/>
+   ∇ϕ = hopsize in secs <br/>
+   nfilt = number of filters for generating mel scale <br/>
    num_ceps = amount of cepsta to keep<br/>
    fmfcc = Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇fmfcc = Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    ∇∇fmfcc = Delta Delta Mel Frequency Cepstral Coefficient of size ( num_ceps, nframes)<br/>
    N = upper range limit for Delta MFCC computation. Usually = 2 <br/>
    start/finish = starting/ending range for frame plotting. If finish = 0, plot all frames<br/>
-    
-  #   generateFeatures() will return signal features
-  <strong>Takes several paremeters as input:</strong><br/>
-       file = .wav <br/>
-       premph = pre emphasis filtering coefficient (first filtering of signal) <br/>
-       ϕl = window length in secs <br/>
-       ∇ϕ = hopsize in secs <br/>
-       nfilt = number of filters for generating mel scale <br/>
-       num_ceps = number of MFCCs to keep for each frame <br/>
-
-
-
+   
  #   myplot!() will return a mosaic of plots
    filename followed by frequency of maximal power spectral density for the first frame of the batch<br/>
    4 bins of the power spectrum (frames 1, 10, 20 and 30)<br/>
