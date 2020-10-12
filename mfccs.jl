@@ -166,24 +166,24 @@ end
 
 function compute∇mffc(mfcc, N)
   
-    # input of mfcc of size ( nfilt, nframes)
-    nfilt = size(mfcc, 1)
+    # input is mfcc of size ( num_ceps, nframes)
+    num_ceps = size(mfcc, 1)
     ϕn = size(mfcc, 2)
 
-    # output ∇mfcc of size ( nfilt, nframes)
-    ∇mfcc = zeros(Float64, nfilt, ϕn)
+    # output ∇mfcc of size ( num_ceps, nframes)
+    ∇mfcc = zeros(Float64, num_ceps, ϕn)
 
-    # padd mfcc frames with N * zeros(nfilts, 1) on each side
+    # padd mfcc frames with N * zeros(num_ceps, 1) on each side
     # mfcc becomes size ( nfilt, nframes + 2 * N)
     for i = 1:N
-        mfcc = hcat(zeros(Float64, nfilt), mfcc, zeros(Float64, nfilt))
+        mfcc = hcat(zeros(Float64, num_ceps), mfcc, zeros(Float64, num_ceps))
     end
 
     # pϕn is padded mfcc frame count
     pϕn = size(mfcc, 2)
 
-    # for each frame, at each filter, calculate ∇mfcc = ∑{n=1:N}[ n * (c[t+n] - c[t-n]) ] / ∑{n=1:N}[ 2 * n^2 ]
-    for i = 1:nfilt, j in 1:ϕn
+    # for each frame, at each cepsta, calculate ∇mfcc = ∑{n=1:N}[ n * (c[t+n] - c[t-n]) ] / ∑{n=1:N}[ 2 * n^2 ]
+    for i = 1:num_ceps, j in 1:ϕn
         for n = 1:N
             # mfcc are padded, while using output coordinates => add pad length to mfcc coor
             ∇mfcc[i,j] += n * ( mfcc[i,j+N+n] - mfcc[i,j+N-n] ) / ( 2 * sqrt(n) )
