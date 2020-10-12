@@ -63,7 +63,11 @@ Go read it.<br/>
    ![image info](./output.png)<br/>
     
 We can see harmonic resonances in the filter banks.<br/>
-Yeah! From the base audio signal, we have isolated the fundamental frequency of this piano key, while only looking at the max powspec of the first frame of the signal!
+Yeah! From the base audio signal, we have isolated the fundamental frequency of this piano key, while only looking at the max powspec of the first frame of the signal!<br/>
+
+And we also get our Deltas and Delta-Deltas MFCCs ( which indicates in which 'direction' and at which 'speed' do our cepstal coefficients vary over time.<br/>
+
+![image info](./output2.png)<br/>
 
   #  General process :
    input signal <br/>
