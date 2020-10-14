@@ -29,6 +29,7 @@ Go read it.<br/>
 <strong>How to use :</strong><br/>
 
     λsr, ϕl, powspec, bin, fbankDB, fmfcc, ∇fmfcc, ∇∇fmfcc = generateFeatures(file, preemph = 0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt=20, num_ceps = 12)
+    SLRCtime, SLRCfreq = surfaceLinearRegression(fbankDB)
     myplot!(file, powspec, fbankDB, fmfcc, bin, λsr, ϕl, start=1, finish=0, colors="warm")
 
     
@@ -69,7 +70,13 @@ We also get our Deltas and Delta-Deltas MFCCs ( which indicates in which 'direct
 
 ![image info](./delta-mfccs.png)<br/>
 
-Combining MFCCs, DeltaMFCCs and DeltaDeltaMFCCs into a single input vector for each frame, will result in a fingerprint of the audio signal that will serve as input for the classification model.<br/>
+Combining MFCCs, DeltaMFCCs and DeltaDeltaMFCCs into a single input vector for each frame (for example), will result in a fingerprint of the audio signal that will serve as input for the classification model.<br/>
+
+One type of features mentioned in this paper are the slopes of the power spectrum in the time and frequency axis.<br/>
+surfaceLinearRegression() is a method created just for that.<br/>
+
+![image info](./SLRC.png)<br/>
+
 
 
   #  General process :
