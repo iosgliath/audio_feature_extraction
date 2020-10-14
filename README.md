@@ -73,7 +73,7 @@ We also get our Deltas and Delta-Deltas MFCCs ( which indicates in which 'direct
 Combining MFCCs, DeltaMFCCs and DeltaDeltaMFCCs into a single input vector for each frame (for example), will result in a fingerprint of the audio signal that will serve as input for the classification model.<br/>
 
 One type of features mentioned in this paper are the slopes of the power spectrum in the time and frequency axis.<br/>
-surfaceLinearRegression() is a method created just for that.<br/>
+surfaceLinearRegression() is a method filling that purpose, returning SLRCtime and SLRCfreq from filter banks.<br/>
 
 ![image info](./SLRC.png)<br/>
 
