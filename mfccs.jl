@@ -177,8 +177,8 @@ function compute∇mffc(mfcc, N)
 
     # padd mfcc frames with N * (num_ceps, 1) on each side
     for i = 1:N
-        # pad with existing first col 
-        mfcc = hcat( mfcc[:,1], mfcc , mfcc[:,1])
+        # pad left and right with first and last col
+        mfcc = hcat( mfcc[:,1], mfcc , mfcc[:,size(mfcc,2)])
     end
 
 
@@ -203,6 +203,26 @@ end
 function formant(powspecFrame::Array{Float64,1}, i::Int64)
     i == 1 && return maximum(powspecFrame)
     return sort(powspecFrame, rev=true)[i]
+end
+
+function surfaceLinearRegression(fbank::Array{Float64, 2})
+    x = size(fbank, 1)
+    y = size(fbank, 2)
+    SLRCtime = zeros(Float64, x, y)
+    SLRCfreq = zeros(Float64, x, y)
+
+    # pad one col left with first col
+    fbank = hcat( fbank[:,1], fbank )
+
+    # pad one row top with first row
+    fbank = vcat( fbank[1,:]', fbank )
+
+    for i = 2:x, j = 2:y
+        SLRCtime[i, j] = fbank[i, j] - fbank[i, j-1]
+        SLRCfreq[i, j] = fbank[i, j] - fbank[i-1, j]
+    end
+
+    return SLRCtime, SLRCfreq
 end
 
 function generateFeatures(file; preemph=0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt= 20, num_ceps = 12, N = 2)
