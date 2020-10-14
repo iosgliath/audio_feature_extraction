@@ -217,8 +217,8 @@ function generateFeatures(file; preemph=0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt= 
     λ = convert(Array{Float64,2},data)
     λ = vec(convert(Array, λ))
 
-    #pre emphasis filtering
-    λ = λ .* preemph
+    #TO DO pre emphasis filtering
+    #λ = λ .* preemph
 
     # compute fft and get power spectral density
     powspec = fftλ(λ, λsr, ϕl, ∇ϕ)
