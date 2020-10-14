@@ -175,14 +175,12 @@ function compute∇mffc(mfcc, N)
     # output ∇mfcc of size ( num_ceps, nframes)
     ∇mfcc = zeros(Float64, num_ceps, ϕn)
 
-    # padd mfcc frames with N * zeros(num_ceps, 1) on each side
-    # mfcc becomes size ( nfilt, nframes + 2 * N)
+    # padd mfcc frames with N * (num_ceps, 1) on each side
     for i = 1:N
-        mfcc = hcat(zeros(Float64, num_ceps), mfcc, zeros(Float64, num_ceps))
+        # pad with existing first col 
+        mfcc = hcat( mfcc[:,1], mfcc , mfcc[:,1])
     end
 
-    # pϕn is padded mfcc frame count
-    pϕn = size(mfcc, 2)
 
     # for each frame, at each cepstra, calculate ∇mfcc = ∑{n=1:N}[ n * (c[t+n] - c[t-n]) ] / ∑{n=1:N}[ 2 * n^2 ]
     for i = 1:num_ceps, j in 1:ϕn
@@ -193,6 +191,18 @@ function compute∇mffc(mfcc, N)
     end
   
     return ∇mfcc
+end
+
+function formant(powspec::Array{Float64,2}, i::Int64)
+    #if looking for formant 1, return maxim of each frame
+    i == 1 && return maximum(powspec, dims=1)
+    # if looking for formant n, sort each frame rev=true, return row n
+    return sort(powspec, rev=true, dims=1)[i,:]
+end
+
+function formant(powspecFrame::Array{Float64,1}, i::Int64)
+    i == 1 && return maximum(powspecFrame)
+    return sort(powspecFrame, rev=true)[i]
 end
 
 function generateFeatures(file; preemph=0.97, ϕl = 0.025, ∇ϕ = 0.01, nfilt= 20, num_ceps = 12, N = 2)
