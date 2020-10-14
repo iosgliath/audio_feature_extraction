@@ -67,7 +67,7 @@ Nonetheless, by only looking at the max powspec of the first frame of the signal
 
 We also get our Deltas and Delta-Deltas MFCCs ( which indicates in which 'direction' ( diferential ) and at which 'speed' ( acceleration ) do our cepstral coefficients change over time, giving us a good indication of the dynamics behind the power spectrum we are analysing ).<br/>
 
-![image info](./output2.png)<br/>
+![image info](./delta-mfccs.png)<br/>
 
 Combining MFCCs, DeltaMFCCs and DeltaDeltaMFCCs into a single input vector for each frame, will result in a fingerprint of the audio signal that will serve as input for the classification model.<br/>
 
